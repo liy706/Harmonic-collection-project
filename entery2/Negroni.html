@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Negroni | Harmonic Collection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --red:#9e2a2b;
+  --orange:#e85d04;
+  --gold:#dea800;
+  --dark:#2b0504;
+  --gap:1.5rem;
+  --radius:1rem;
+  font-size:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--dark);
+  color:#fff;
+  font-family:monospace;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:var(--gap);
+}
+/* 卡片外壳 */
+.card{
+  width:100%;
+  max-width:420px;
+  background:#000;
+  border-radius:var(--radius);
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
+/* 三色拉丝幕布 */
+.stripes{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+}
+.stripes span{
+  flex:1;
+  transition:transform .35s ease;
+}
+.stripes .red{background:var(--red);}
+.stripes .orange{background:var(--orange);}
+.stripes .gold{background:var(--gold);}
+.card:hover .red{transform:translateX(-4px);}
+.card:hover .gold{transform:translateX(4px);}
+
+/* 文字层 */
+.content{
+  position:relative;
+  z-index:2;
+  padding:var(--gap);
+}
+.badge{
+  display:inline-block;
+  background:#fff;
+  color:var(--dark);
+  padding:.25rem .5rem;
+  border-radius:.25rem;
+  font-size:.75rem;
+}
+h2{font-size:1.75rem;margin:.5rem 0 0}
+.story{
+  font-family:'Ma Shan Zheng',cursive;
+  font-size:1.15rem;
+  line-height:1.8;
+  margin:1rem 0 1.5rem;
+}
+.footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.ratio{font-size:.9rem;color:#ccc}
+
+/* 原生开关按钮 */
+details{
+  display:inline-block;
+}
+summary{
+  list-style:none;
+  background:var(--orange);
+  color:#000;
+  padding:.5rem 1rem;
+  font-weight:600;
+  letter-spacing:1px;
+  border-radius:.25rem;
+  cursor:pointer;
+  transition:background .25s;
+}
+summary:hover{background:#fff;}
+/* 去掉默认三角 */
+summary::-webkit-details-marker{display:none}
+
+/* 下拉配方 */
+.recipe{
+  margin-top:1rem;
+  padding:1rem;
+  border:1px solid var(--orange);
+  border-radius:.5rem;
+  background:rgba(0,0,0,.5);
+}
+.recipe h3{font-size:1.1rem;margin-bottom:.5rem}
+.recipe p{margin:.25rem 0}
+small{display:block;margin-top:.5rem;color:#aaa}
+/* 手写字体 */
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+</style>
+</head>
+
+<body>
+<div class="card">
+  <div class="stripes">
+    <span class="red"></span>
+    <span class="orange"></span>
+    <span class="gold"></span>
+  </div>
+
+  <div class="content">
+    <div>
+      <span class="badge">No.05 Diminished-seventh chord</span>
+      <h2>Negroni</h2>
+    </div>
+
+    <p class="story">
+Count Negroni swapped the soda for gin, letting “bitter” and “bold” shake hands.<br>
+
+After three sips your tongue feels gripped by a diminished-seventh chord—momentarily weightless,<br> waiting for the next beat to resolve back to the tonic.
+    </p>
+
+    <div class="footer">
+      <span class="ratio">1 : 1 : 1</span>
+      <!-- 点击开关 -->
+      <details>
+        <summary>▶ Play Chord</summary>
+        <div class="recipe">
+          <h3>Negroni Recipe</h3>
+          <p>Gin 30 ml</p>
+          <p>Campari 30 ml</p>
+          <p>Sweet Vermouth 30 ml</p>
+          <small>Stir / Rock glass / Orange twist</small>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+</body>
+</html>

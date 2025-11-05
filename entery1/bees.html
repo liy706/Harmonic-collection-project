@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bee’s Knees | Harmonic Collection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --honey:#f5b700;
+  --lemon:#ffe66d;
+  --gin:#2a9d8f;
+  --dark:#1d1d1d;
+  --gap:1.5rem;
+  --radius:1rem;
+  font-size:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--dark);
+  color:#fff;
+  font-family:monospace;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:var(--gap);
+}
+.card{
+  width:100%;
+  max-width:420px;
+  background:#000;
+  border-radius:var(--radius);
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
+.stripes{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+}
+.stripes span{
+  flex:1;
+  transition:transform .35s ease;
+}
+.stripes .gin{background:var(--gin);}
+.stripes .lemon{background:var(--lemon);}
+.stripes .honey{background:var(--honey);}
+.card:hover .gin{transform:translateX(-4px);}
+.card:hover .honey{transform:translateX(4px);}
+
+.content{
+  position:relative;
+  z-index:2;
+  padding:var(--gap);
+}
+.badge{
+  display:inline-block;
+  background:#fff;
+  color:var(--dark);
+  padding:.25rem .5rem;
+  border-radius:.25rem;
+  font-size:.75rem;
+}
+h2{font-size:1.75rem;margin:.5rem 0 0}
+.story{
+  font-family:'Ma Shan Zheng',cursive;
+  font-size:1.15rem;
+  line-height:1.8;
+  margin:1rem 0 1.5rem;
+}
+.footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.ratio{font-size:.9rem;color:#ccc}
+details{display:inline-block}
+summary{
+  list-style:none;
+  background:var(--honey);
+  color:#000;
+  padding:.5rem 1rem;
+  font-weight:600;
+  letter-spacing:1px;
+  border-radius:.25rem;
+  cursor:pointer;
+  transition:background .25s;
+}
+summary:hover{background:#fff}
+summary::-webkit-details-marker{display:none}
+.recipe{
+  margin-top:1rem;
+  padding:1rem;
+  border:1px solid var(--honey);
+  border-radius:.5rem;
+  background:rgba(0,0,0,.5);
+}
+.recipe h3{font-size:1.1rem;margin-bottom:.5rem}
+.recipe p{margin:.25rem 0}
+small{display:block;margin-top:.5rem;color:#aaa}
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+</style>
+</head>
+
+<body>
+<div class="card">
+  <div class="stripes">
+    <span class="gin"></span>
+    <span class="lemon"></span>
+    <span class="honey"></span>
+  </div>
+
+  <div class="content">
+    <div>
+      <span class="badge">No.02 Major Sixth</span>
+      <h2>Bee’s Knees</h2>
+    </div>
+
+    <p class="story">
+      1927, Paris speakeasies.<br>
+      Bathtub gin masked with honey and lemon, a bright major-sixth leap that made the bitter base sing.<br>
+      Three sips and the Roaring Twenties buzz back to life—sweet, sharp, effortlessly cool.
+    </p>
+
+    <div class="footer">
+      <span class="ratio">2 : 1 : ¾</span>
+      <details>
+        <summary>▶ Play Chord</summary>
+        <div class="recipe">
+          <h3>Bee’s Knees Lead Sheet</h3>
+          <p>Dry gin 60 ml</p>
+          <p>Fresh lemon juice 30 ml</p>
+          <p>Honey syrup 22 ml</p>
+          <small>Shake / Coupe / Lemon twist</small>
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+</body>
+</html>
